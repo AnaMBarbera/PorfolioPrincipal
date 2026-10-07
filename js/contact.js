@@ -1,6 +1,20 @@
+var formStartTime = Date.now();
+
 function sendMail() {
     var subject = document.getElementById('subject');
     var comment = document.getElementById('comment');
+    var honeypot = document.getElementById('website');
+
+     // Si el honeypot tiene contenido, probablemente es un bot
+     if (honeypot.value.trim() !== "") {
+        return;
+    }
+      // Tiempo mínimo de 3 segundos
+      var elapsedTime = Date.now() - formStartTime;
+
+      if (elapsedTime < 3000) {
+          return;
+      }
 
     if (subject.value.trim() === "" || comment.value.trim() === "") {
         alert("Por favor, completa el asunto y el mensaje.");

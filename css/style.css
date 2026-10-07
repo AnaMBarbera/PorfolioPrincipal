@@ -1201,6 +1201,10 @@ input[type="text"] {
   color: #fff;
   font-size: 25px;
 }
+.honeypot {
+  position: absolute;
+  left: -9999px;
+}
 
 .fh5co-social-icon a {
   padding: 0 5px;
